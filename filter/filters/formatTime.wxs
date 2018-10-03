@@ -1,0 +1,11 @@
+/**
+ * 格式化 时间 什么时候前
+*/
+module.exports = function formatTime(time) {
+  console.log('time----', time)
+  const dateArr = time.split('-');
+  const timeArr = dateArr[2].split(' ');
+  const newTime = dateArr[0] + '年' + dateArr[1] + '月' + timeArr[0] + '日 ' + timeArr[1];
+
+  return newTime;
+}

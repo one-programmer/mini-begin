@@ -1,0 +1,10 @@
+
+var toDecimal2 = require("./filters/toDecimal2.wxs");
+var format = require("./filters/format.wxs");
+var formatTime = require("./filters/formatTime.wxs");
+
+module.exports = {
+  toDecimal2: toDecimal2,
+  format: format,
+  formatTime: formatTime,
+};

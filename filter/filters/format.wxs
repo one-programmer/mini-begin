@@ -1,0 +1,23 @@
+/**
+ * 格式化 时间 什么时候前
+*/
+module.exports = function format(t) {
+  var regexp = getRegExp('-', 'g');
+  t = t.replace(regexp, '/');
+  var now = getDate().getTime();
+  var time = getDate(t).getTime();
+  if (time > now) {
+    return '刚刚';
+  } else {
+    var e = Math.round((now - time) / 1000);
+    if (e < 60) return '刚刚';
+    else if (e < 1800) return Math.round(e / 60) + '分钟前';
+    else if (e < 3600) return '半小时前';
+    else if (e < 86400) return Math.round(e / 3600) + '小时前';
+    else if (e < 86400 * 7) return Math.round(e / 86400) + '天前';
+    else if (e < 86400 * 30) return Math.round(e / (86400 * 7)) + '周前';
+    else if (e < 86400 * 365) return Math.round(e / (86400 * 30)) + '个月前';
+    else return Math.round(e / (86400 * 365)) + '年前';
+  }
+  return '';
+};

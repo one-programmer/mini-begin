@@ -1,0 +1,20 @@
+/**
+ * 格式化 金额到小数点后两位
+*/
+module.exports = function toDecimal2 (x) {
+  var f = parseFloat(x)
+  if (isNaN(f)) {
+    return false
+  }
+  var fn = Math.round(x * 100) / 10000
+  var s = fn.toString()
+  var rs = s.indexOf('.')
+  if (rs < 0) {
+    rs = s.length
+    s += '.'
+  }
+  while (s.length <= rs + 2) {
+    s += '0'
+  }
+  return s
+}

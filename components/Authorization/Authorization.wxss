@@ -1,0 +1,13 @@
+/* components/authorizations/authorization.wxss */
+.auth-btn{
+  background: transparent;
+  line-height: 1.4;
+  border: 0 !important;
+  padding: 0;
+  margin: 0;
+  font-size: 32rpx;
+  /* color: #0099FF;
+  text-decoration-line: underline; */
+  border-radius: 0;
+}
+ .auth-btn::after {border: none} 
