@@ -1,5 +1,7 @@
 # [mini-begin](https://github.com/one-programmer/mini-begin)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
+
+[![issues](https://github.com/one-programmer/mini-begin/issues)]()
+[![license](https://img.shields.io/github/license/one-programmer/mini-begin.svg)]()
 
 
 # 小程序开发从这里开始
