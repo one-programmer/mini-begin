@@ -1,10 +1,5 @@
 # [mini-begin](https://github.com/one-programmer/mini-begin)
-[![]()
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
-[![Build Status](https://travis-ci.org/yanhaijing/jslib-base.svg?branch=master)]()
-[![npm](https://img.shields.io/badge/npm-0.2.0-orange.svg)]()
-[![NPM downloads](http://img.shields.io/npm/dm/jslib-base.svg?style=flat-square)]()
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/yanhaijing/jslib-base.svg)]()
 
 
 # 小程序开发从这里开始
