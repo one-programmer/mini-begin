@@ -1,6 +1,6 @@
 # [mini-begin](https://github.com/one-programmer/mini-begin)
 
-[![issues](https://github.com/one-programmer/mini-begin/issues)]()
+[![](https://github.com/one-programmer/mini-begin/issues)]()
 [![license](https://img.shields.io/github/license/one-programmer/mini-begin.svg)]()
 
 
