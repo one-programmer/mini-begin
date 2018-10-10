@@ -54,5 +54,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  authCallback: () => {
+    console.log('0000');
   }
 })

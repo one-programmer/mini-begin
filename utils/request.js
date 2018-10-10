@@ -1,4 +1,4 @@
-import api from '../config/index'
+import config from '../config/index'
 import storage from './storage.js'
 
 /**
@@ -15,7 +15,7 @@ const request = ({
   method = 'GET',
   data = {},
 }) => { 
-  const url = `${api}{path}`;
+  const url = `${config.api}{path}`;
 
   const token = storage.getSync('token');
 
