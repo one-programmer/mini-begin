@@ -1,5 +1,4 @@
 <!-- 授权组件 -->
-
 <button
   class="reset-btn"
   open-type="getUserInfo"

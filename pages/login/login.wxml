@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <Authorization
+    wx:if="{{!hasUserInfo && canIUse}}"
+    bind:authCallback="authCallback"
+  >
+    获取头像昵称
+  </Authorization>
+
+  <block wx:else>
+    <image
+      bindtap="bindViewTap"
+      class="userinfo-avatar"
+      src="{{userInfo.avatarUrl}}"
+      mode="cover"
+    />
+
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block>
+</view>

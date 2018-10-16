@@ -36,12 +36,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "生成海报示例",
-					"pathName": "pages/poster/poster"
+					"pathName": "pages/poster/poster",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "授权登陆",
+					"pathName": "pages/login/login"
 				}
 			]
 		}
