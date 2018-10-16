@@ -1,5 +1,6 @@
 //index.js
 import config from '../../config/index';
+import Storage from '../../wx.api/storage/index'
 
 //获取应用实例
 const app = getApp()
@@ -18,7 +19,9 @@ Page({
     })
   },
   onLoad: function () {
-    console.log('config', config);
+    console.log('Storage', Storage.setSync());
+
+    // Storage.setSync('key', 'value');
 
     if (app.globalData.userInfo) {
       this.setData({
