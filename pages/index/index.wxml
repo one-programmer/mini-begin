@@ -1,5 +1,12 @@
 <!--index.wxml-->
 <view class="container">
+
+
+  <navigator url='/pages/click/click'>
+    <button type='primary'>多次点击</button>
+  </navigator>    
+
+
   <view class="userinfo">
     <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
     <Authorization

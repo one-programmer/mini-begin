@@ -1,0 +1,40 @@
+<!--pages/click/click.wxml-->
+
+<view class='click'>
+
+  <!-- 使用 disabled -->
+  <button
+    type='primary'
+    disabled="{{isManyTimes}}"
+    bindtap='disabledHandle'
+  >
+    disabled方法
+  </button>
+
+  <!-- 配合touch事件 -->
+  <button
+    type='primary'
+    bindtap="newTapHandle"
+    bindtouchstart="touchStart"
+    bindtouchend="touchEnd"
+  >
+    配合touch事件
+  </button>
+
+    <!-- 配合touch事件 -->
+  <button
+    type='primary'
+    bindtap="setTimeoutHandle"
+  >
+    setTimeoutHandle
+  </button>
+
+  <!-- 使用函数截流 -->
+  <button
+    type='primary'
+    bindtap='throttleHandle'
+  >
+    使用函数截流
+  </button>
+
+</view>

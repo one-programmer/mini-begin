@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      height: 2000px;
+      width: 100%;
+      background: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+
+
+  <script>
+    const scrollFn = () => {
+        console.log(1)
+    }
+    function throttle(method, delay, duration){
+      let timer = null;
+      let begin = new Date();  
+
+      return function() {                
+        clearTimeout(timer);
+
+        const current = new Date(); 
+
+        if(current - begin >= duration){
+          method.apply(this, arguments);
+          begin = current;
+        } else {
+          timer = setTimeout(() => {
+            method.apply(this, arguments);
+          }, delay);
+        }
+
+      }
+    }
+
+    window.onscroll = throttle(scrollFn, 100, 500);
+
+    // function scrollFn(){
+    //   console.log(1)
+    // }
+    // function throttle(method, context){
+    //   clearTimeout(method.index);
+    //   method.index = setTimeout(function(){
+    //     method.call(context)
+    //   },300)
+    // }
+    // window.onscroll=function(){
+    //   // scrollFn()
+    //   throttle(scrollFn)
+    // }  
+  </script>
+</body>
+</html>

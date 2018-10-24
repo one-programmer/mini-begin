@@ -10,7 +10,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    isManyTimes: false,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -60,5 +61,12 @@ Page({
   },
   authCallback: () => {
     console.log('0000');
+  },
+
+  manyTimesClick() {
+    console.log('manyTimesClick');
+    this.setData({
+      isManyTimes: true
+    })
   }
 })
