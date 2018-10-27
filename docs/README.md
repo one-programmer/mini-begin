@@ -17,9 +17,15 @@
 - 小程序动画
 - 蓝牙踩坑
 - 组件方法和组件之间方法的调用
+- 小程序跳转公众号
 
 -----
 
+# 小程序跳转公众号
+[文档][https://developers.weixin.qq.com/miniprogram/dev/component/official-account.html] 里有响应的说明
+```
+<official-account></official-account>
+```
 
 
 

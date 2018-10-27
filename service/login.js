@@ -1,11 +1,11 @@
-import request from '../utils/request.js';
+import request from './request.js';
 
 const login = {
   // 微信登陆成功后通过 openId, sessionKey, unionId 去后台换取token
   getToken(data) {
     console.log('data', data)
     return request({
-      path: `/api/wechat/login/`,
+      path: '/api/wechat/login/',
       method: 'POST',
       data
     })

@@ -1,6 +1,7 @@
 <!--pages/login/login.wxml-->
 <view class='login'>
   <view>授权登陆</view>
+
   <Authorization
     wx:if="{{!hasUserInfo && canIUse}}"
     bind:authCallback="authCallback"

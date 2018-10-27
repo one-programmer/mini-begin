@@ -1,26 +1,25 @@
 <!--index.wxml-->
 <view class="container">
-
-
-  <navigator url='/pages/click/click'>
-    <button type='primary'>多次点击</button>
-  </navigator>    
-
-
+   
   <view class="userinfo">
-    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
-    <Authorization
+    <navigator
       wx:if="{{!hasUserInfo && canIUse}}"
-      bind:authCallback="authCallback"
+      url='/pages/login/login'
     >
-      获取头像昵称
-    </Authorization>
+      <button type='primary'>去授权登陆</button>
+    </navigator>
 
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+
+  <navigator url='/pages/click/click'>
+    <button type='primary'>多次点击</button>
+  </navigator> 
+
+
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>

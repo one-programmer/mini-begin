@@ -25,18 +25,19 @@ Component({
    */
   methods: {
     // 允许授权后回调
-    bindGetUserInfo: function (e) {
+    bindGetUserInfo(e) {
       const token = storage.getSync('token') || void 0;
-      console.log('token==', token)
       if (token) {
+        // 已登陆
         this.triggerEvent('authCallback')
       } else {
-        this.wxLogin()
+        // 发起微信登陆
+        this.notifyWXLogin()
       }
     },
 
     // 发起微信登陆
-    wxLogin: function () {
+    notifyWXLogin() {
       wx.login({
         timeout: 5000,
         success: result => {
@@ -51,34 +52,39 @@ Component({
                 encryptedData: res.encryptedData,
                 iv: res.iv,
               }
-              // 去自己的服务器换取 token
-              login.getToken(data).then(res => {
-                console.log('login.getToken', res);
-                // storage.setSync("token", res.data.token);
-                this.triggerEvent('authCallback');
-                // this.setUserInfo();
-              }).catch(err => {
-                wx.showModal({
-                  title: '提示',
-                  content: res.errMsg,
-                })
-              })
+              this.getServiceToken(data)
             },
             fail: err => {
-              console.log('err ', err)
-            },
-            complete: () => {
-              console.log('complete')
+              console.log('wx getUserInfo err ', err)
             }
           })
         },
         fail: err => {
-          console.log('err ', err)
-        },
-        complete: () => {
-          console.log('complete')
+          console.log('wx.login: ', err)
         }
       })
     },
+
+    // 去服务器换取 token
+    getServiceToken(data) {
+      login.getToken(data).then(res => {
+        console.log('login.getToken', res);
+        storage.setSync("token", res.data.token);
+        this.setUserInfo();
+      }).catch(err => {
+        wx.showModal({
+          title: '提示',
+          content: res.errMsg,
+        })
+      })
+    },
+
+    // 设置用户信息
+    setUserInfo() {
+      login.getUserInfo().then(res => {
+        app.globalData.userInfo = res.data.results;
+        this.triggerEvent('authCallback');
+      })
+    }
   }
 })
